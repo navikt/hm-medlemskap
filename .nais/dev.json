@@ -1,0 +1,9 @@
+{
+  "HTTP_PORT": "8080",
+  "RAPID_APP_NAME": "hm-medlemskap",
+  "KAFKA_RAPID_TOPIC": "teamdigihot.hm-soknadsbehandling-v1",
+  "KAFKA_CONSUMER_GROUP_ID": "hm-medlemskap-v1",
+  "KAFKA_RESET_POLICY": "latest",
+  "HOTSAK_API_BASE_URL": "http://hm-saksbehandling.teamdigihot.svc.cluster.local/api",
+  "HOTSAK_API_CLIENT_SCOPE": "api://dev-gcp.teamdigihot.hm-saksbehandling/.default"
+}
