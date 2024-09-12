@@ -46,7 +46,8 @@ spec:
   accessPolicy:
     outbound:
       rules:
-        - application: hm-saksbehandling
+        - application: medlemskap-hjelpemidler
+          namespace: medlemskap
       external:
         - host: login.microsoftonline.com
   env:
