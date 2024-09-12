@@ -53,7 +53,7 @@ class LovMeApiClient(
 
     suspend fun vurderMedlemskap(søknadID: UUID, fnr: Fødselsnummer): VurderMedlemskapDto? =
         client
-            .post("$baseUrl/TODO") {
+            .post("$baseUrl/vurdering") {
                 setBody(VurderMedlemskapRequest(fnr))
             }
             .expectBody("Sendt forespørsel om vurdering av medlemskap for søknad $søknadID")
@@ -83,6 +83,11 @@ data class VurderMedlemskapRequest(
 )
 
 data class VurderMedlemskapDto(
-    // TODO, vet ikke hva responsen fra LovMe blir enda
-    val resultat: String,
+    val status: MedlemskapStatus,
 )
+
+enum class MedlemskapStatus {
+    JA,
+    NEI,
+    UAVKLART,
+}

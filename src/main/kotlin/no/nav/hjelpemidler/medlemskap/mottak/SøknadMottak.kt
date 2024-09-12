@@ -60,7 +60,8 @@ class SøknadMottak(
         }
         val medlemskapVurdering = lovMeApiClient.vurderMedlemskap(søknadID, fnr)
         if (medlemskapVurdering != null) {
-            log.info { "Svar fra LovMe for søknad $søknadID: ${medlemskapVurdering.resultat}" }
+            log.info { medlemskapVurdering }
+            log.info { "Svar fra LovMe for søknad $søknadID: ${medlemskapVurdering.status}" }
         }
     }
 }
