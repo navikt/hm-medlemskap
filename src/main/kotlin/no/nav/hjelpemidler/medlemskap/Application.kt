@@ -9,8 +9,6 @@ private val log = KotlinLogging.logger {}
 fun main() {
     val lovMeApiClient = LovMeApiClient()
 
-    log.info { "LovMe API Client, starter RapidApplication, ${no.nav.hjelpemidler.configuration.Configuration.current}"  }
-
     RapidApplication
         .create(no.nav.hjelpemidler.configuration.Configuration.current)
         .apply {
