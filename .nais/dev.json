@@ -4,6 +4,6 @@
   "KAFKA_RAPID_TOPIC": "teamdigihot.hm-soknadsbehandling-v1",
   "KAFKA_CONSUMER_GROUP_ID": "hm-medlemskap-v1",
   "KAFKA_RESET_POLICY": "latest",
-  "HOTSAK_API_BASE_URL": "http://medlemskap-hjelpemidler.medlemskap.svc.cluster.local",
-  "HOTSAK_API_CLIENT_SCOPE": "api://dev-gcp.medlemskap.medlemskap-hjelpemidler/.default"
+  "LOVME_API_BASE_URL": "http://medlemskap-hjelpemidler.medlemskap.svc.cluster.local",
+  "LOVME_API_CLIENT_SCOPE": "api://dev-gcp.medlemskap.medlemskap-hjelpemidler/.default"
 }
