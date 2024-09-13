@@ -56,7 +56,7 @@ class LovMeApiClient(
     suspend fun vurderMedlemskap(søknadID: UUID, fnr: Fødselsnummer): VurderMedlemskapDto? =
         client
             .post("$baseUrl/vurdering") {
-                setBody(VurderMedlemskapRequest(fnr))
+                setBody(mapOf("fnr" to fnr))
             }
             .expectBody("Sendt forespørsel om vurdering av medlemskap for søknad $søknadID")
 
@@ -77,12 +77,6 @@ class LovMeApiClient(
     }
 }
 private suspend fun HttpResponse.bodyAsTextOrNull(): String? = runCatching { bodyAsText() }.getOrNull()
-
-
-
-data class VurderMedlemskapRequest(
-    val fnr: Fødselsnummer,
-)
 
 data class VurderMedlemskapDto(
     val status: MedlemskapStatus,

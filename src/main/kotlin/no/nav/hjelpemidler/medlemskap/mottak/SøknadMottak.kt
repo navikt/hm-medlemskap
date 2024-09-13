@@ -58,7 +58,7 @@ class SøknadMottak(
                 log.info { "Mottok søknadevent $eventName med søknadId: $søknadID for bruker $fnr" }
             }
         }
-        val medlemskapVurdering = lovMeApiClient.vurderMedlemskap(søknadID, fnr)
+        val medlemskapVurdering = lovMeApiClient.vurderMedlemskap( søknadID, fnr)
 
         log.info { "Mottok medlemskap: $medlemskapVurdering" }
 
