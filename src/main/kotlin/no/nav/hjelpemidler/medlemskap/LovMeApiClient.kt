@@ -61,12 +61,15 @@ class LovMeApiClient(
             .expectBody("Sendt forespørsel om vurdering av medlemskap for søknad $søknadID")
 
 
-    private suspend inline fun <reified T> HttpResponse.expectBody(melding: String): T? =
-        when {
+    private suspend inline fun <reified T> HttpResponse.expectBody(melding: String): T? {
+
+      log.info { "Fikk svar $status" }
+       return when {
             status.isSuccess() -> body<T>()
             status == HttpStatusCode.Conflict -> null
             else -> error("$melding, uventet svar fra tjeneste, status: '$status', body: '${bodyAsTextOrNull()}'")
         }
+    }
 
     private suspend fun HttpResponse.expectSuccess(melding: String) {
         when {
