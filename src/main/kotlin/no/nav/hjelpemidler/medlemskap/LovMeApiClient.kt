@@ -20,6 +20,7 @@ import no.nav.hjelpemidler.domain.person.Fødselsnummer
 import no.nav.hjelpemidler.http.correlationId
 import no.nav.hjelpemidler.http.createHttpClient
 import no.nav.hjelpemidler.http.openid.azureAD
+import io.ktor.client.plugins.logging.*
 import java.util.UUID
 import kotlin.time.Duration.Companion.seconds
 
@@ -33,6 +34,7 @@ class LovMeApiClient(
 ) {
     private val client: HttpClient = createHttpClient(engine = engine) {
         expectSuccess = false
+        install(Logging)
         if (retry) {
             install(HttpRequestRetry) {
                 retryOnExceptionOrServerErrors(5)
