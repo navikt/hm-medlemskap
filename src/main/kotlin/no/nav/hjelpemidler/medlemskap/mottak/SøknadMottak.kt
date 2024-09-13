@@ -55,7 +55,7 @@ class SøknadMottak(
             }
 
             else -> withLoggingContextAsync("packet" to packet.toJson()) {
-                log.info { "Mottok søknadevent $eventName med søknadId: $søknadID" }
+                log.info { "Mottok søknadevent $eventName med søknadId: $søknadID for bruker $fnr" }
             }
         }
         val medlemskapVurdering = lovMeApiClient.vurderMedlemskap(søknadID, fnr)
