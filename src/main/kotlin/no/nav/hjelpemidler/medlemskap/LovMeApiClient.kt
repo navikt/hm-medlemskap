@@ -56,7 +56,7 @@ class LovMeApiClient(
     suspend fun vurderMedlemskap(søknadID: UUID, fnr: Fødselsnummer): VurderMedlemskapDto? =
         client
             .post("$baseUrl/vurdering") {
-                setBody(mapOf("fnr" to fnr))
+                setBody(mapOf("fnr" to fnr.toString()))
             }
             .expectBody("Sendt forespørsel om vurdering av medlemskap for søknad $søknadID")
 
