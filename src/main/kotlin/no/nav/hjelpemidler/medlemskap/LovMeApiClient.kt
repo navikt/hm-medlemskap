@@ -83,6 +83,7 @@ private suspend fun HttpResponse.bodyAsTextOrNull(): String? = runCatching { bod
 
 data class VurderMedlemskapDto(
     val status: MedlemskapStatus,
+    val detaljer: String,
 )
 
 enum class MedlemskapStatus {
