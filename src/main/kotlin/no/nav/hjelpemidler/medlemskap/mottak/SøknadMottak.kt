@@ -88,7 +88,10 @@ class SøknadMottak(
 
                             ),
                     )
+
+
                     val payload = jsonMapper.writeValueAsString(medlemskapsvurderingHendelse)
+                    log.info { "Payload til BigQuery $payload" }
                     context.publish(søknadID.toString(), payload)
                 }
             }
