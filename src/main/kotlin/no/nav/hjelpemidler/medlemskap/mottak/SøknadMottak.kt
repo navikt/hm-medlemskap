@@ -72,6 +72,8 @@ class SøknadMottak(
                 val medlemskapVurdering = lovMeApiClient.vurderMedlemskap(søknadID, fnr)
                 val alder = Period.between(fnr.fødselsdato, LocalDate.now()).years
 
+                log.info { "fnr $fnr, fdato ${fnr.fødselsdato} år ${fnr.fødselsdato.year}" }
+
                 log.info { "Mottok medlemskapsvurdering: $medlemskapVurdering" }
 
                 if (medlemskapVurdering != null) {

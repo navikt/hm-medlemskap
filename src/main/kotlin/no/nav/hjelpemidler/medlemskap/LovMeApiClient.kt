@@ -34,7 +34,6 @@ class LovMeApiClient(
 ) {
     private val client: HttpClient = createHttpClient(engine = engine) {
         expectSuccess = false
-        install(Logging)
         if (retry) {
             install(HttpRequestRetry) {
                 retryOnExceptionOrServerErrors(5)
