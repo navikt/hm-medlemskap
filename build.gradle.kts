@@ -15,6 +15,7 @@ dependencies {
 
     testImplementation(libs.bundles.test)
     testImplementation(libs.hotlibs.core)
+    testImplementation(libs.tbdLibs.rapidsAndRivers.test)
 }
 
 kotlin { jvmToolchain(21) }
