@@ -20,7 +20,6 @@ import no.nav.hjelpemidler.domain.person.Fødselsnummer
 import no.nav.hjelpemidler.http.correlationId
 import no.nav.hjelpemidler.http.createHttpClient
 import no.nav.hjelpemidler.http.openid.azureAD
-import io.ktor.client.plugins.logging.*
 import java.util.UUID
 import kotlin.time.Duration.Companion.seconds
 
@@ -55,7 +54,7 @@ class LovMeApiClient(
     suspend fun vurderMedlemskap(søknadID: UUID, fnr: Fødselsnummer): VurderMedlemskapDto? =
         client
             .post("$baseUrl/vurdering") {
-                setBody(mapOf("fnr" to fnr.toString()))
+                setBody(mapOf("fnr" to fnr))
             }
             .expectBody("Sendt forespørsel om vurdering av medlemskap for søknad $søknadID")
 

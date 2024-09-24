@@ -10,11 +10,11 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlin.logging)
     implementation(libs.rapidsAndRivers)
-    implementation(libs.hm.http)
-    implementation(libs.hm.core)
+    implementation(libs.hotlibs.http)
+    implementation(libs.hotlibs.core)
 
     testImplementation(libs.bundles.test)
-    testImplementation(libs.hm.core)
+    testImplementation(libs.hotlibs.core)
 }
 
 kotlin { jvmToolchain(21) }
