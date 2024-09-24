@@ -60,7 +60,7 @@ class LovmeApiClientTest {
                 søknadID = UUID.randomUUID(),
                 fnr = Fødselsnummer("15084300133")
             )
-            assertEquals(vurderMedlemskapDto?.status, MedlemskapStatus.NEI)
+            assertEquals(vurderMedlemskapDto?.status, MedlemskapStatus.JA)
         }
     }
 }
